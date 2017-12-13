@@ -11,12 +11,62 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{9A87BAD9-D483-4781-9126-2770C8485262}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{E4E96295-FF70-4A00-BB55-D3FEC3668D32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Backup Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{1C2407AD-4002-4E99-9D21-A55B08FD4D03}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Backup Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Backup Container\Back Up Database Task"
+          DTS:CreationName="Microsoft.SqlServer.Management.DatabaseMaintenance.DbMaintenanceBackupTask, Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Back Up Database Task"
+          DTS:DTSID="{639B0351-CC76-4F29-ADEE-889832A5F2BF}"
+          DTS:ExecutableType="Microsoft.SqlServer.Management.DatabaseMaintenance.DbMaintenanceBackupTask, Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Back Up Database Task"
+          DTS:TaskContact="Back Up Database Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:ServerVersion="9"
+              SQLTask:ExtendedLogging="True"
+              SQLTask:LocalConnectionForLogging=""
+              SQLTask:TaskName=""
+              SQLTask:IgnoreDatabasesInNotOnlineState="False"
+              SQLTask:BackupAction="0"
+              SQLTask:BackupIsIncremental="False"
+              SQLTask:BackupFileGroupsFiles=""
+              SQLTask:BackupDeviceType="2"
+              SQLTask:BackupPhisycalDestinationType="2"
+              SQLTask:BackupDestinationType="0"
+              SQLTask:BackupDestinationAutoFolderPath=""
+              SQLTask:BackupActionForExistingBackups="0"
+              SQLTask:BackupCreateSubFolder="False"
+              SQLTask:BackupFileExtension=""
+              SQLTask:BackupVerifyIntegrity="False"
+              SQLTask:ExpireDate="2017-12-27T00:00:00"
+              SQLTask:RetainDays="14"
+              SQLTask:InDays="True"
+              SQLTask:UseExpiration="False"
+              SQLTask:BackupCompressionAction="0"
+              SQLTask:CopyOnlyBackup="False"
+              SQLTask:IgnoreReplicaType="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Cleanup Tasks"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -78,7 +128,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Back Up Database Task"
           DTS:TaskContact="Back Up Database Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -116,7 +166,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute T-SQL Statement Task"
           DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -143,6 +193,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
+          Size="205,42"
+          Id="Package\Cleanup Tasks\Maintenance Cleanup Task"
+          TopLeft="78,15" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="288,112"
+          Size="288,155"
+          Id="Package\Cleanup Tasks"
+          TopLeft="572,274" />
+        <NodeLayout
           Size="190,42"
           Id="Package\Sequence Container\Back Up Database Task"
           TopLeft="93,26" />
@@ -158,16 +219,16 @@
           Id="Package\Sequence Container"
           TopLeft="137,178" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\Cleanup Tasks\Maintenance Cleanup Task"
-          TopLeft="78,15" />
+          Size="190,42"
+          Id="Package\Backup Container\Back Up Database Task"
+          TopLeft="65,24" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="288,112"
-          Size="288,155"
-          Id="Package\Cleanup Tasks"
-          TopLeft="572,274" />
+          PanelSize="260,121"
+          Size="260,164"
+          Id="Package\Backup Container"
+          TopLeft="469,77" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
