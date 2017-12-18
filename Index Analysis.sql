@@ -1,3 +1,5 @@
+This line is added for merge test in gitHub on December 18, 2017
+
 -- Possible Bad NC Indexes (writes > reads)
 SELECT OBJECT_NAME(s.[object_id]) AS [Table Name],
 i.name AS [Index Name], i.index_id,
