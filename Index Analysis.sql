@@ -1,3 +1,4 @@
+This is a third line added to the this file for third test
 This is the second line added to this file for a second test
 This line is added for merge test in gitHub on December 18, 2017
 
