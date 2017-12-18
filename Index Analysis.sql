@@ -1,3 +1,4 @@
+This is the second line added to this file for a second test
 This line is added for merge test in gitHub on December 18, 2017
 
 -- Possible Bad NC Indexes (writes > reads)
